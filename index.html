@@ -670,6 +670,8 @@
       const previousId = currentSelectedSiteId;
       currentSelectedSiteId = site.id;
 
+      markerInstances[site.id].setZIndexOffset(2000);
+
       if (markerInstances[previousId]) {
         const prevSite = sites[previousId];
         markerInstances[previousId].setIcon(createMiniatureLeafletIcon(prevSite, visitedSet.has(prevSite.id), false));
