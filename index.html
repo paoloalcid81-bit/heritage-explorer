@@ -347,7 +347,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 4px;
+      gap: 6px;
     }
 
     .image-container {
@@ -472,12 +472,8 @@
     <!-- Info Section -->
     <div class="profile-panel">
       <div class="info-col">
-        <div class="profile-tag" id="loc-period"></div>
         <div class="header-row">
           <h2 class="profile-name" id="loc-name"></h2>
-          <button id="stamp-btn" class="stamp-btn" onclick="toggleVisitedCurrentSite()">
-            <span>+ Mark as Visited</span>
-          </button>
         </div>
         <div class="profile-alt-name" id="loc-alt"></div>
 
@@ -491,6 +487,11 @@
       </div>
 
       <div class="image-col">
+
+        <button id="stamp-btn" class="stamp-btn" onclick="toggleVisitedCurrentSite()">
+        <span>+ Mark as Visited</span>
+        </button>
+        
         <div class="image-container">
           <img id="loc-img" class="site-photo" src="" alt="Landmark Photo">
         </div>
@@ -681,7 +682,6 @@
 
       document.getElementById('loc-img').src = site.image_url;
       document.getElementById('loc-credit').innerHTML = `Photo: <a href="${site.image_source_url}" target="_blank">${site.image_credit}</a> (${site.image_license})`;
-      document.getElementById('loc-period').innerText = `${site.period} • ${site.hashtag}`;
       document.getElementById('loc-name').innerText = site.site_name;
       document.getElementById('loc-alt').innerText = site.alternate_name ? `Alt: ${site.alternate_name}` : '';
       document.getElementById('loc-category').innerText = site.category;
@@ -689,7 +689,7 @@
       document.getElementById('loc-build').innerText = site.build_year;
       document.getElementById('loc-geo').innerText = `${site.lat}, ${site.lng}`;
       document.getElementById('loc-desc').innerText = site.description;
-      document.getElementById('loc-source').innerHTML = `Source: <a href="${site.source_url}" target="_blank">${site.source_name}</a>`;
+      document.getElementById('loc-source').innerHTML = `Source: <a href="${site.source_url}" target="_blank">${site.source_name}</a> &nbsp;•&nbsp; ${site.hashtag}`;
 
       const isVisited = visitedSet.has(site.id);
       const btn = document.getElementById('stamp-btn');
