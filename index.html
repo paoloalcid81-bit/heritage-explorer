@@ -156,7 +156,7 @@
 
     /* Visited Scaling (~80% bigger) */
     .miniature-marker.visited {
-      transform: translate(-50%, -50%) scale(1.7);
+      transform: translate(-50%, -50%) scale(1.4);
       z-index: 500;
     }
 
@@ -647,7 +647,7 @@
     }).addTo(map);
 
     function createMiniatureLeafletIcon(site, isVisited, isFocused) {
-      const checkHtml = isVisited ? `<span class="check-badge">✓</span>` : '';
+      const checkHtml = '';
       const htmlString = `
         <div class="miniature-marker ${isVisited ? 'visited' : ''} ${isFocused ? 'active-focus' : ''}" id="marker-elem-${site.id}">
           <div class="thumb-wrap">
