@@ -692,7 +692,7 @@
       document.getElementById('loc-build').innerText = site.build_year;
       document.getElementById('loc-geo').innerText = `${site.lat}, ${site.lng}`;
       document.getElementById('loc-desc').innerText = site.description;
-      document.getElementById('loc-source').innerHTML = `Source: <a href="${site.source_url}" target="_blank">${site.source_name}</a> &nbsp;•&nbsp; ${site.hashtag}`;
+      document.getElementById('loc-source').innerHTML = `Source: <a href="${site.source_url}" target="_blank">${site.source_name}</a><br>${site.hashtag}`;
 
       const isVisited = visitedSet.has(site.id);
       const btn = document.getElementById('stamp-btn');
